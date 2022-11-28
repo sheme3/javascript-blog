@@ -52,6 +52,7 @@ for (let link of links) {
 const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles';
+optArticleTagsSelector = '.post-tags .list';
 
 function generateTitleLinks() {
     const titleListContainer = document.querySelector(optTitleListSelector);
@@ -80,3 +81,38 @@ function generateTitleLinks() {
 
 
 generateTitleLinks();
+
+
+function generateTags() {
+
+
+
+    /* find all articles */
+
+    function generateArticleLinks() {
+        const titleListContainer = document.querySelector(optTitleListSelector);
+
+    /* START LOOP: for every article: */
+
+    /* find tags wrapper */
+
+    /* make html variable with empty string */
+
+    /* get tags from data-tags attribute */
+
+    /* split tags into array */
+
+    /* START LOOP: for each tag */
+
+    /* generate HTML of the link */
+
+    /* add generated code to html variable */
+
+    /* END LOOP: for each tag */
+
+    /* insert HTML of all the links into the tags wrapper */
+
+    /* END LOOP: for every article: */
+}
+
+generateTags();
