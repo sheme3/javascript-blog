@@ -34,7 +34,7 @@ function titleClickHandler(event) {
     /* find the correct article using the selector (value of 'href' attribute) */
 
     const targetArticle = document.querySelector(articleSelector);
-    
+
 
     /* add class 'active' to the correct article */
 
@@ -46,3 +46,37 @@ const links = document.querySelectorAll('.titles a');
 for (let link of links) {
     link.addEventListener('click', titleClickHandler);
 }
+
+
+
+const optArticleSelector = '.post',
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
+
+function generateTitleLinks() {
+    const titleListContainer = document.querySelector(optTitleListSelector);
+    /* remove contents of titleList */
+    titleListContainer.innerHTML = '';
+
+    const articleList = document.querySelectorAll(optArticleSelector);
+
+    let titleLinksHtml = '';
+
+    articleList.forEach(function (article) {
+        const id = article.getAttribute('id');
+        const titleElement = article.querySelector(optTitleSelector);
+        const title = titleElement.innerHTML;
+
+        const html = '<li><a href="' + '#' + id + '">' + '<span>' + title + '</span></a></li>';
+        const html2 = `<li><a href="#${id}"><span>${title}</span></a></li>`;
+
+        titleLinksHtml = titleLinksHtml + html2;
+
+        // <li><a href="#article-2"><span>Article 2</span></a></li>
+    })
+
+    titleListContainer.innerHTML = titleLinksHtml;
+}
+
+
+generateTitleLinks();
